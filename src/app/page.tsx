@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'XPLR - Explore Your World',
@@ -35,6 +36,21 @@ export default function Home() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="space-x-4 mt-8">
+          <Link
+            href="/auth/signin"
+            className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+          >
+            Sign In
+          </Link>
+          <Link
+            href="/auth/signup"
+            className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition-colors"
+          >
+            Sign Up
+          </Link>
         </div>
       </div>
     </main>

@@ -1,0 +1,6 @@
+name = "xplr-app"
+compatibility_date = "2024-04-07"
+compatibility_flags = ["nodejs_compat"]
+
+[site]
+bucket = ".vercel/output/static" 
