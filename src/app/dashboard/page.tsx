@@ -15,6 +15,9 @@ export default function DashboardPage() {
     supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user)
       setLoading(false)
+    }).catch(() => {
+      setLoading(false)
+      window.location.href = '/auth/signin'
     })
 
     // Listen for auth changes
@@ -36,7 +39,11 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+        <div 
+          role="status"
+          className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"
+          aria-label="Loading"
+        ></div>
       </div>
     )
   }
